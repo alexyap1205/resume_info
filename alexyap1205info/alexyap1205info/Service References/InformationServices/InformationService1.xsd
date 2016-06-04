@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://tempuri.org/" elementFormDefault="qualified" targetNamespace="http://tempuri.org/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://alexyap1205-001-site1.ctempurl.com/ResumeServices/InformationService.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/ProfileInformationService" />
+  <xs:element name="GetEducations">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetEducationsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/ProfileInformationService" minOccurs="0" name="GetEducationsResult" nillable="true" type="q1:ArrayOfEducation" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

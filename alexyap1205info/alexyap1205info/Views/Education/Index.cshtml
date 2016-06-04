@@ -1,0 +1,55 @@
+﻿@model IEnumerable<alexyap1205info.ViewModels.Education.EducationVM>
+
+@section scripts
+{
+
+    <script src="~/Scripts/jquery-1.10.2.js"></script>
+    @*<script type="text/javascript" src="~/Scripts/AjaxLoaded.js"></script>*@
+
+    <script type="text/javascript">
+        $(function () {
+            $(document).ready(function () {
+                $.ajax({
+                    type: 'GET',
+                    url: '@Url.Action("GetEducations", "Education")',
+                    dataType: "json",
+                    async: true,
+                    success: function (result) {
+                        var educations = result;
+
+                        var out = "<ul class=\"list-group\">";
+                        $.each(educations,
+                            function () {
+
+                                out += "<li class=\"list-group-item\">";
+
+                                out = out + "<h4 class=\"list-group-item-heading\">" + this.Title + "</h4>";
+                                out = out + "<p class=\"list-group-item-text\">" + this.Institution + " (" + this.YearCompleted + ")</p><br/><br/>";
+                                out = out + "<p>" + this.Summary + "</p><br/>";
+
+                                out += "</li>";
+
+                            });
+                        out += "</ul>";
+
+                        $("#educationList").html(out);
+                    }
+
+                });
+
+            });
+
+        });
+    </script>
+}
+
+@{
+    ViewBag.Title = "Educations";
+}
+
+
+<div class="row">
+    <div class="col-sm-8" id="educationList">
+    </div>
+</div>
+

@@ -1,0 +1,16 @@
+﻿@model alexyap1205info.ViewModels.Contact.ContactVM
+
+@{
+    ViewBag.Title = "Contact";
+}
+
+<h2>Information</h2>
+
+<address>
+    <abbr title="Address"><strong>A:</strong></abbr>@Html.DisplayFor(model => model.Address)<br/>
+    <abbr title="Phone"><strong>P:</strong></abbr>@Html.DisplayFor(model => model.Mobile)
+</address>
+
+<address>
+    <strong>Email:</strong>   <a href="mailto:me@alexyap1205.info">me@alexyap1205.info</a><br />
+</address>

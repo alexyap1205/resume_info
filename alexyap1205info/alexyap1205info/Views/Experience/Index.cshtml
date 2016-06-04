@@ -1,0 +1,33 @@
+﻿@model IEnumerable<alexyap1205info.ViewModels.Experience.ExpereinceVM>
+@section scripts
+{
+    <script src="~/Scripts/jquery-1.10.2.js"></script>
+    <script src="~/Scripts/jquery.signalR-2.2.0.js"></script>
+    <script src="~/signalr/hubs"></script>
+    <script type="text/javascript" src="~/Scripts/anchor-btn.js"></script>
+}
+
+
+@{
+    ViewBag.Title = "Experiences";
+}
+
+<div class="navbar-header">
+    @foreach (var item in Model)
+    {
+        <a class="nav-brand btn btn-default" id="@item.ID" href="#">@Html.DisplayFor(modelItem => item.CompanyName)</a>
+    }
+</div>
+<br/>
+<br/>
+<br/>
+<div class="row" id="experienceDetail">
+    <div class="col-sm-8">
+        <h3>Company Name: <span data-itemid="companyName"></span></h3>
+        <h4>Title: <span data-itemid="title"></span></h4>
+        <h4>Duration: <span data-itemid="duration"></span></h4>
+        <br />
+        <p class="text-justify">Summary: <span data-itemid="summary"></span></p>
+    </div>
+</div>
+

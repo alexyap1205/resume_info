@@ -1,0 +1,56 @@
+﻿@model alexyap1205info.ViewModels.Home.HomePageVM
+
+@section scripts
+{
+    <script>
+        $(function() {
+             $("[data-toggle = 'tooltip']").tooltip();
+        });
+    </script>
+}
+
+
+@{
+    ViewBag.Title = "Profile";
+}
+
+
+<div class="jumbotron">
+    <h2>Overview</h2>
+    <br/>
+    <p class="lead">@Html.DisplayFor(model => model.ProfileSummary)</p>
+    <br/>
+</div>
+
+<div class="row">
+    <div class="col-md-4">
+        <h2>General Skills</h2>
+        <ul>
+            @foreach (var item in Model.GeneralSkills)
+            {
+                <li title="@Html.DisplayFor(modelItem => item.Summary)" data-toggle = "tooltip" 
+   data-placement = "top" >@Html.DisplayFor(modelItem => item.Name)</li>
+            }
+        </ul>
+    </div>
+    <div class="col-md-4">
+        <h2>Technical Skills</h2>
+        <ul>
+            @foreach (var item in Model.TechnicalSkills)
+            {
+                <li title="@Html.DisplayFor(modelItem => item.Summary)" data-toggle = "tooltip" 
+   data-placement = "top">@Html.DisplayFor(modelItem => item.Name)</li>
+            }
+        </ul>
+    </div>
+    <div class="col-md-4">
+        <h2>Other Skills</h2>
+        <ul>
+            @foreach (var item in Model.OtherSkills)
+            {
+                <li title="@Html.DisplayFor(modelItem => item.Summary)" data-toggle = "tooltip" 
+   data-placement = "top">@Html.DisplayFor(modelItem => item.Name)</li>
+            }
+        </ul>
+    </div>
+</div>
