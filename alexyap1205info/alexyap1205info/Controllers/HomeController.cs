@@ -13,25 +13,25 @@ namespace alexyap1205info.Controllers
     {
         public ActionResult Index()
         {
-            IDataAccessor accessor = new DataAccessor();
-            accessor.Initialize();
-            ProfileInformation information = accessor.GetDefaultProfile();
-            Profession defaultProfession = accessor.GetDefaultProfession(information);
-            Dictionary<SkillCategory, List<Skill>> skillsDictionary = accessor.GetSkills(defaultProfession);
-            accessor.UnInitialize();
-            HomePageVM vm = new HomePageVM()
-            {
-                DisplayName = information.DisplayName,
-                ProfileSummary = defaultProfession.Summary
-            };
+            //IDataAccessor accessor = new DataAccessor();
+            //accessor.Initialize();
+            //ProfileInformation information = accessor.GetDefaultProfile();
+            //Profession defaultProfession = accessor.GetDefaultProfession(information);
+            //Dictionary<SkillCategory, List<Skill>> skillsDictionary = accessor.GetSkills(defaultProfession);
+            //accessor.UnInitialize();
+            //HomePageVM vm = new HomePageVM()
+            //{
+            //    DisplayName = information.DisplayName,
+            //    ProfileSummary = defaultProfession.Summary
+            //};
 
-            GetSkills(skillsDictionary, vm.GeneralSkills, SkillCategory.General);
-            GetSkills(skillsDictionary, vm.TechnicalSkills, SkillCategory.Design);
-            GetSkills(skillsDictionary, vm.TechnicalSkills, SkillCategory.Programming);
-            GetSkills(skillsDictionary, vm.OtherSkills, SkillCategory.Process);
-            GetSkills(skillsDictionary, vm.OtherSkills, SkillCategory.Tools);
+            //GetSkills(skillsDictionary, vm.GeneralSkills, SkillCategory.General);
+            //GetSkills(skillsDictionary, vm.TechnicalSkills, SkillCategory.Design);
+            //GetSkills(skillsDictionary, vm.TechnicalSkills, SkillCategory.Programming);
+            //GetSkills(skillsDictionary, vm.OtherSkills, SkillCategory.Process);
+            //GetSkills(skillsDictionary, vm.OtherSkills, SkillCategory.Tools);
 
-            return View(vm);
+            return View();
         }
 
         private static void GetSkills(Dictionary<SkillCategory, List<Skill>> skillsDictionary, List<SkillInfoVM> skillsList, SkillCategory category)

@@ -283,7 +283,7 @@ namespace DataAccess
         private SqlConnection CreateConnection()
         {
             string connectionString =
-                @"Data Source=SQL5017.myWindowsHosting.com;Initial Catalog=DB_9D865D_alexyap1205info;User Id=DB_9D865D_alexyap1205info_admin;Password=xxxx;Connection Timeout=60;";
+                @"Data Source=SQL5017.myWindowsHosting.com;Initial Catalog=DB_9D865D_alexyap1205info;User Id=DB_9D865D_alexyap1205info_admin;Password=x;Connection Timeout=60;";
 
             SqlConnection connection = new SqlConnection(connectionString);
             connection.Open();

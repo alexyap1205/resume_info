@@ -1,8 +1,8 @@
 ﻿$(function () {
     var experienceHub = $.connection.experienceHub;
+    $("#experienceDetail").hide();
 
     $(document).ready(function () {
-        $("#experienceDetail").hide();
     });
 
     $.connection.hub.start().done(function () {
