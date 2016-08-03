@@ -1,7 +1,41 @@
-﻿@{
+﻿@section scripts
+{
+    <script type="text/javascript">
+            $(function () {
+                $('#download').click(function(e) {
+                    e.preventDefault();
+                    window.location.href = '/resume/docs/resume_alexander_yap.pdf';
+                });
+            });
+        </script>
+}
+
+@{
     ViewBag.Title = "About";
 }
-<h2>@ViewBag.Title.</h2>
-<h3>@ViewBag.Message</h3>
 
-<p>Use this area to provide additional information.</p>
+<div class="row">
+    <div class="box">
+        <div class="col-lg-12">
+            <h3>Who am I?</h3>
+            <p>Hi, my name is Alex. I am a Software Engineer by profession, but outside of work I spend most of my time with my family and some geeky projects such as this one. :)</p>
+            <br/>
+            <h3>Why did I build this site?</h3>
+            <p>Well for starters, I've been working in the software industry for more than a decade. Although I've been up to date with latest technologies, I found myself working mostly on Windows Desktop Development.
+                Recently, I've been very interested on web technologies and this site has been my test bed since then.
+                So, this site might have hiccups here and there. :-)
+            </p>
+            <br/>
+            <h3>Which technologies have been used here?</h3>
+            <p>
+                Being a .NET developer, I am very much comfortable with C#. So, I chose ASP.NET MVC as my base platform.
+                I wanted my data to be as dynamic as possible, so there is a very simplistic SQL Server on the back end.
+                In between, there is some element of Bootstrap, JQuery, SignalR, Web API, WCF Web Services involved in each pages.
+            </p>
+            <br/>
+            <em>Download full resume <a id="download">here</a></em>
+        </div>
+    </div>
+</div>
+
+

@@ -1,12 +1,14 @@
 ﻿$(function () {
     var experienceHub = $.connection.experienceHub;
-    $("#experienceDetail").hide();
 
     $(document).ready(function () {
     });
 
     $.connection.hub.start().done(function () {
         $("a").click(function () {
+            $.blockUI({
+                message: '<h3>Waiting for data...</h3>'
+            });
             experienceHub.server.getDetail(this.id);
         });
     });
@@ -21,7 +23,7 @@
         duration[0].textContent = detail.Duration;
         var summary = $("span[data-itemid='summary']");
         summary[0].textContent = detail.Summary;
-
+        $.unblockUI();
     }
 
 
